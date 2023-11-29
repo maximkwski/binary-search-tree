@@ -138,11 +138,28 @@ class BinarySearchTree {
     }
 }
 
+
+//built  bst with given array
+function builtTree(arr) {
+    let newArr = [...new Set(arr)]
+    const tree = new BinarySearchTree()
+    newArr.forEach(item => {
+        tree.insert(item)
+    })
+    return tree
+}
+
+
+const tree = builtTree([1,3,5,18,4])
+console.log(tree)
+tree.levelOrder(tree.root)
+
 const bst = new BinarySearchTree();
 console.log('the tree is empty: ', bst.isEmpty());
 bst.insert(10)
-bst.insert(5)
-bst.insert(15)
 bst.insert(3)
+bst.insert(23)
+bst.insert(15)
 
-bst.levelOrder()
+
+bst.levelOrder(bst.root)
